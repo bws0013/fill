@@ -12,10 +12,12 @@ import (
 func main() {
   scanner := bufio.NewScanner(os.Stdin)
 
+  fmt.Println("\n**Warning, the purpose of this program is to take up disk space**\n")
+
   fmt.Println("Enter a number enging with m to create a file of size m megabytes")
   fmt.Println("Enter a number enging with g to create a file of size g gigabytes")
 
-  fmt.Print("Enter number ending with m or g: ")
+  fmt.Print("Enter number ending with m or g (ie 10m or 1g): ")
   scanner.Scan()
   input := scanner.Text()
   input = strings.ToLower(input)
@@ -33,7 +35,7 @@ func main() {
     return
   }
 
-  fmt.Println("If you are sure you want to create this file click enter, else control-c.")
+  fmt.Println("\nIf you are sure you want to create this file click enter, else control-c.")
   scanner.Scan()
   scanner.Text()
 
